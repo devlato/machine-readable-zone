@@ -10,6 +10,7 @@ import {
   validatePersonalNumber,
   validateFields,
   FieldError,
+  ValidationSchema,
   DEFAULT_PERSONAL_NUMBER,
 } from './validate-args';
 import { IntermediateCommandLineArgs } from './parse-args';
@@ -62,8 +63,11 @@ export const SCHEMA = {
   personalNumber: validatePersonalNumber,
 };
 
-export const validateGenerationData = (args: MRZGeneratorArgs): ArgsValidationResult => {
-  const errors = validateFields(args.user, SCHEMA);
+export const validateGenerationData = (
+  args: MRZGeneratorArgs,
+  schema: ValidationSchema = SCHEMA,
+): ArgsValidationResult => {
+  const errors = validateFields(args.user, schema);
 
   return {
     errors,

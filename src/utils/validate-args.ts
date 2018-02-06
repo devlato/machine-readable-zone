@@ -14,7 +14,7 @@ type FieldValidationResult = OptionalString;
 
 export type Validator = (value: any) => FieldValidationResult;
 
-interface ValidationSchema {
+export interface ValidationSchema {
   [key: string]: Validator;
 }
 
