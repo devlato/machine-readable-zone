@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "allowJs": false,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": false,
+    "alwaysStrict": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "baseUrl": "./node_modules",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "pretty": true,
+    "rootDir": "./src",
+    "declaration": false,
+    "experimentalDecorators": true,
+    "newLine": "LF",
+    "outDir": "dist",
+    "lib": [
+      "es5",
+      "es6",
+      "es7"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
