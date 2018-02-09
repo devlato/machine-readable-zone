@@ -4,10 +4,10 @@ engines:
     config: tslint.json
 ratings:
   paths:
-    - "src/**/*"
-    - "**.md"
+  - "src/**/*"
+  - "**.md"
 exclude_patterns:
-  - **/*.test.ts
-  - dist/**/*
-  - coverage/**/*
-  - data/**/*
+- **/*.test.ts
+- dist/**/*
+- coverage/**/*
+- data/**/*
