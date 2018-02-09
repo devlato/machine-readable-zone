@@ -1,6 +1,6 @@
-# MRZ Generator
+# Machine-readable zone code generator
 
-This library helps to generate [MRZ codes](https://en.wikipedia.org/wiki/Machine-readable_passport). 
+This library helps to generate [Machine-readable zone codes](https://en.wikipedia.org/wiki/Machine-readable_passport). 
 It's implemented with Node.js and TypeScript. It provides both CLI tool and programmatic API.
 
 
@@ -27,25 +27,26 @@ this [cheatsheet](https://github.com/areai51/yarn-cheatsheet).
 To install it as a global binary, use the following command:
 
 ```sh
-$ yarn global add mrz
+$ yarn global add machine-readable-zone
 ```
 
 To install it as your project dependency, run:
 
 ```sh
-$ yarn add mrz
+$ yarn add machine-readable-zone
 ```
 
 
 ## Usage
 
-If you have the package installed globally, you can use `mrz` as binary name. Otherwise keep in mind that 
-you can use `./node_modules/mrz/dist/index.js` or `yarn start` (in development mode) instead of `mrz`.
+If you have the package installed globally, you can use `machine-readable-zone` as binary name. Otherwise keep 
+in mind that you can use `./node_modules/machine-readable-zone/dist/index.js` or `yarn start` (in development mode) 
+instead of `machine-readable-zone`.
 
 ```sh
-$ mrz --help
+$ machine-readable-zone --help
 
-  Syntax: mrz [options]
+  Syntax: machine-readable-zone [options]
   Options:
   --first-name:          [*] First name
   --last-name:           [*] Last name
@@ -80,7 +81,7 @@ The library exports some methods:
 The library exposes the following typings:
 
 ```typescript
-declare module 'mrz' {
+declare module 'machine-readable-zone' {
   export interface UserInfo {
     firstName: string;
     lastName: string;

@@ -1,4 +1,4 @@
-import { CommandLineArgs } from 'mrz';
+import { CommandLineArgs } from 'machine-readable-zone';
 import { default as generateMRZFromCommandLineArgs } from './run-command-line';
 
 export { default as generateMRZFromCommandLineArgs } from './run-command-line';

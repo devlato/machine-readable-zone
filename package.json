@@ -1,5 +1,5 @@
 {
-  "name": "mrz",
+  "name": "machine-readable-zone",
   "version": "0.1.0",
   "description": "Machine Readable Zone",
   "main": "dist/index.js",
@@ -22,7 +22,7 @@
     "./LICENSE"
   ],
   "keywords": [
-    "mrz"
+    "machine-readable-zone"
   ],
   "author": "Denis Tokarev <github@devlato.com>",
   "license": "MIT",

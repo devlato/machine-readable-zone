@@ -1,4 +1,4 @@
-declare module 'mrz' {
+declare module 'machine-readable-zone' {
   /* tslint:disable variable-name */
 
   export interface UserInfo {

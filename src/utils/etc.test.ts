@@ -1,5 +1,5 @@
 import 'jest';
-import { MRZGeneratorArgs } from 'mrz';
+import { MRZGeneratorArgs } from 'machine-readable-zone';
 import {
   validateGenerationData,
   SCHEMA,

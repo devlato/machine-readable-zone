@@ -1,5 +1,5 @@
 import 'jest';
-import { UserInfo } from 'mrz';
+import { UserInfo } from 'machine-readable-zone';
 import generateMrz from './generate-mrz';
 
 describe('src/generate-mrz', () => {

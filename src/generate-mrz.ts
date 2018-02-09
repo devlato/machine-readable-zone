@@ -1,4 +1,4 @@
-import { MRZGeneratorArgs } from 'mrz';
+import { MRZGeneratorArgs } from 'machine-readable-zone';
 import { NEW_LINE, getDatePartsFromString, DateParts } from './utils';
 
 const DOCUMENT_TYPE = 'P';

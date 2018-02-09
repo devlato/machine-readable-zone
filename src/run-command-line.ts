@@ -1,4 +1,4 @@
-import { CommandLineArgs, MRZCommandLineArgs, MRZGeneratorArgs } from 'mrz';
+import { CommandLineArgs, MRZCommandLineArgs, MRZGeneratorArgs } from 'machine-readable-zone';
 import parseArgs from './utils/parse-args';
 import { default as generateMRZ } from './generate-mrz';
 import {
@@ -113,7 +113,9 @@ const printHelp = (errors: SchemaValidationResult = []) => {
 };
 
 const printVersion = () => console.log(
-  `${SPACES}MRZ generator.${NEW_LINE_SPACED}Version: ${packageJSON.version}`);
+  `${SPACES}Machine-readable zone code generator.${NEW_LINE_SPACED}` +
+  `Version: ${packageJSON.version}`,
+);
 
 const printCountries = () => console.log(
   countries.map(c => `${SPACES}${

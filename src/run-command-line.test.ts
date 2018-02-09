@@ -1,5 +1,5 @@
 import 'jest';
-import { CommandLineArgs } from 'mrz';
+import { CommandLineArgs } from 'machine-readable-zone';
 import runCommandLine from './run-command-line';
 
 interface MockFNState {
@@ -72,7 +72,7 @@ describe('src/run-command-line', () => {
     expect(mockFn.mock.calls).toEqual([[`
   Field "passportNumber" has wrong format: value 123 should have exactly 9 digits`,
     ], [`
-  Syntax: mrz [options]
+  Syntax: machine-readable-zone [options]
   Options:
   --first-name:          [*] First name
   --last-name:           [*] Last name
@@ -98,7 +98,7 @@ describe('src/run-command-line', () => {
     runCommandLine(args);
     expect(console.log).toHaveBeenCalledTimes(1);
     expect(console.log).toHaveBeenCalledWith(`
-  Syntax: mrz [options]
+  Syntax: machine-readable-zone [options]
   Options:
   --first-name:          [*] First name
   --last-name:           [*] Last name
@@ -124,7 +124,7 @@ describe('src/run-command-line', () => {
     runCommandLine(args);
     expect(console.log).toHaveBeenCalledTimes(1);
     expect(console.log).toHaveBeenCalledWith(
-'  MRZ generator.\n  Version: 0.1.0',
+'  Machine-readable zone code generator.\n  Version: 0.1.0',
     );
   });
 

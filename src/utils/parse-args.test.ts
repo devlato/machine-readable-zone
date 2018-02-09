@@ -1,5 +1,5 @@
 import 'jest';
-import { CommandLineArgs } from 'mrz';
+import { CommandLineArgs } from 'machine-readable-zone';
 import parseArgs from './parse-args';
 
 describe('src/utils/parse-args', () => {

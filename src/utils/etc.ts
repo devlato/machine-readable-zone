@@ -1,4 +1,4 @@
-import { UserInfo, MRZCommandLineArgs, MRZGeneratorArgs } from 'mrz';
+import { UserInfo, MRZCommandLineArgs, MRZGeneratorArgs } from 'machine-readable-zone';
 import {
   getStringOrDefault,
   getBooleanOrDefault,
