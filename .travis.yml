@@ -1,15 +1,18 @@
 language: node_js
 node_js:
-- '9'
-- '8'
-- '7'
-- '6'
+  - '9'
+  - '8'
+  - '7'
+  - '6'
 install:
-- NODE_ENV=development yarn install
+  - NODE_ENV=development yarn install
 before_script:
-- yarn
+  - yarn
 script:
-- yarn validate
+  - yarn validate
+cache:
+  directories:
+    - "node_modules"
 deploy:
   provider: npm
   email: npm@devlato.com
