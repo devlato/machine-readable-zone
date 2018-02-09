@@ -6,6 +6,8 @@ node_js:
 - '6'
 install:
 - NODE_ENV=development yarn install
+before_script:
+- yarn
 script:
 - yarn validate
 deploy:
