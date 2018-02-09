@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- '9'
+- '8'
+- '7'
+- '6'
+install:
+- NODE_ENV=development yarn install
+script:
+- yarn validate
+deploy:
+  provider: npm
+  email: npm@devlato.com
+  api_key:
+    secure: ngzRoJQsHVfuBFMf+o0Q87SOCvwhd0IQgxEmynorpVHGBIEj/UeekZhmze7wcmo76tfc4X6X4+1d3UD2ZHsVWNWwCdiPNWFLV/Ezh50KUOIA12ou8PFnozM+BfwljoWTCB5czTkxeI8aVjQNGBaUFoiBUKUcqKt6vb3cZcYxsZYL1wZl5iOEMJoAU0us/vqk9HmEFKVS6YkKyvKBcBvSaBd1r9rfMLhvlDaGE5ToAZs1HkQkj2E95unET8lDrs8K3US5isKHk++MPHNa9QvtO4kgTrheWANdIR7YJfzx7jRmofJLDl8aep+PJ4UNta3I4TvTVp8tnlsCpt4awimo9TWnYs2kHyUeP6eG22wCY1VYAztOpR8qlHQTgTMcHg3SUh1E9gbwuxlQ1RwKi3LBHKUreZHfzcYl1vFluxl+TOzYgjWuW/VQR6/hILUw92f19D4USy8MqxFDGsrRgv50peUzqXRR6Vd8R2Fyw7H+6XeeMH7of+vCJkVZ4+4UOEh9YmIdygcUurCVcjML3wnSF+JsSCq/bonNERFPGNtuFcn0/h1LjOkWNTDJGqT0Hlim6/OdtLZVz7LOwtWYeEPbnQjlHQzo65HswZuSt2SRvYjT2wP5pJHdaEm/Uh8gDrNyRIoexjoIKTgGJ/CwEgx/4QSxFCNGHyO8/WKxkz5bMIg=
+  on:
+    tags: true
+    repo: devlato/machine-readable-zone

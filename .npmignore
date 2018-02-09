@@ -1,0 +1,11 @@
+.coverage
+node_modules
+src
+.editorconfig
+.gitignore
+.nvmrc
+.travis.yml
+jest.config.js
+tsconfig.json
+tslint.json
+yarn.lock

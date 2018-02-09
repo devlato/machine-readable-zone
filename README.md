@@ -3,6 +3,12 @@
 This library helps to generate [Machine-readable zone codes](https://en.wikipedia.org/wiki/Machine-readable_passport). 
 It's implemented with Node.js and TypeScript. It provides both CLI tool and programmatic API.
 
+[![Build Status](https://travis-ci.org/devlato/machine-readable-zone.svg?branch=master)](https://travis-ci.org/devlato/machine-readable-zone)
+[![Coverage Status](https://coveralls.io/repos/github/devlato/machine-readable-zone/badge.svg?branch=master)](https://coveralls.io/github/devlato/machine-readable-zone?branch=master)
+[![Code Climate](https://codeclimate.com/github/devlato/machine-readable-zone/badges/gpa.svg)](https://codeclimate.com/github/devlato/machine-readable-zone)
+[![Issue Count](https://codeclimate.com/github/devlato/machine-readable-zone/badges/issue_count.svg)](https://codeclimate.com/github/devlato/machine-readable-zone)
+[![npm version](https://badge.fury.io/js/machine-readable-zone.svg)](https://badge.fury.io/js/machine-readable-zone)
+
 
 ## Dependencies:
 
