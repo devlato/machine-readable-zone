@@ -14,8 +14,7 @@ cache:
   directories:
   - "node_modules"
 before_deploy:
-- npm i -g yarn typescript@^2.7.1
-- npm i
+- NODE_ENV=development npm i
 deploy:
   provider: npm
   email: npm@devlato.com
