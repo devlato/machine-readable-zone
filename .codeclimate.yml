@@ -1,11 +1,13 @@
 engines:
-  eslint:
+  tslint:
     enabled: true
-    channel: 'eslint-3'
-    config:
-      extensions:
-      - .js
+    config: tslint.json
 ratings:
-   paths:
-   - "src/**/*"
-   - "**.md"
+  paths:
+    - "src/**/*"
+    - "**.md"
+exclude_patterns:
+  - **/*.test.ts
+  - dist/**/*
+  - coverage/**/*
+  - data/**/*
