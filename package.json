@@ -1,6 +1,6 @@
 {
   "name": "machine-readable-zone",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Machine Readable Zone",
   "main": "dist/index.js",
   "bin": "dist/index.js",
@@ -18,12 +18,13 @@
     "type": "git",
     "url": "git+https://github.com/devlato/machine-readable-zone.git"
   },
+  "readme": "README.md",
   "files": [
-    "./data",
-    "./dist",
-    "./index.d.ts",
-    "./README.md",
-    "./LICENSE"
+    "data",
+    "dist",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
   ],
   "keywords": [
     "machine-readable-zone",

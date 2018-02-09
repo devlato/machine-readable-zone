@@ -7,14 +7,15 @@ node_js:
 install:
   - NODE_ENV=development yarn install
 before_script:
-  - yarn
+  - npm i
 script:
   - yarn validate
 cache:
   directories:
     - "node_modules"
 before_deploy:
-  - yarn
+  - npm i -g yarn typescript@^2.7.1
+  - npm i
 deploy:
   provider: npm
   email: npm@devlato.com

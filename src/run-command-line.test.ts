@@ -2,6 +2,8 @@ import 'jest';
 import { CommandLineArgs } from 'machine-readable-zone';
 import runCommandLine from './run-command-line';
 
+const packageJSON = require('../package.json');
+
 interface MockFNState {
   calls: any[][];
 }
@@ -124,7 +126,7 @@ describe('src/run-command-line', () => {
     runCommandLine(args);
     expect(console.log).toHaveBeenCalledTimes(1);
     expect(console.log).toHaveBeenCalledWith(
-'  Machine-readable zone code generator.\n  Version: 0.2.1',
+`  Machine-readable zone code generator.\n  Version: ${packageJSON.version}`,
     );
   });
 
