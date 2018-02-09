@@ -13,6 +13,8 @@ script:
 cache:
   directories:
     - "node_modules"
+before_deploy:
+  - yarn
 deploy:
   provider: npm
   email: npm@devlato.com
