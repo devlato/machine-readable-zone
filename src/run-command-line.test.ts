@@ -124,7 +124,7 @@ describe('src/run-command-line', () => {
     runCommandLine(args);
     expect(console.log).toHaveBeenCalledTimes(1);
     expect(console.log).toHaveBeenCalledWith(
-'  Machine-readable zone code generator.\n  Version: 0.1.0',
+'  Machine-readable zone code generator.\n  Version: 0.2.1',
     );
   });
 
