@@ -9,13 +9,14 @@ install:
 before_script:
 - npm i
 script:
-- yarn validate
+- npm validate
 cache:
   directories:
   - "node_modules"
 before_deploy:
 - NODE_ENV=development npm i
 deploy:
+  skip_cleanup: true
   provider: npm
   email: npm@devlato.com
   api_key:
