@@ -7,14 +7,14 @@ node_js:
 install:
 - NODE_ENV=development yarn install
 before_script:
-- npm i
+- npm install
 script:
-- npm validate
+- npm run validate
 cache:
   directories:
   - "node_modules"
 before_deploy:
-- NODE_ENV=development npm i
+- NODE_ENV=development npm install
 deploy:
   skip_cleanup: true
   provider: npm
