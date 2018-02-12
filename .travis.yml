@@ -10,6 +10,8 @@ before_script:
 - npm install
 script:
 - npm run validate
+- npm run coveralls
+- npm run codeclimate
 cache:
   directories:
   - "node_modules"
@@ -24,6 +26,3 @@ deploy:
   on:
     tags: true
     repo: devlato/machine-readable-zone
-after_deploy:
-- npm run coveralls
-- npm run codeclimate

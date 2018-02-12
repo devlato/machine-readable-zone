@@ -74,3 +74,30 @@ export const validateGenerationData = (
     isValid: errors.length === 0,
   };
 };
+
+interface Comparable {
+  [key: string]: any;
+  [key: number]: any;
+}
+
+export const areObjectsEqualDeeply = (obj1: Comparable, obj2: Comparable): boolean => {
+  const keys = Object.keys({
+    ...obj1,
+    ...obj2,
+  });
+
+  return keys.every((key: string) => {
+    const obj1Type = typeof obj1;
+    const obj2Type = typeof obj2;
+
+    if (obj1Type !== obj2Type) {
+      return false;
+    }
+
+    if (obj1Type === 'object') {
+      return areObjectsEqualDeeply(obj1[key], obj2[key]);
+    }
+
+    return obj1[key] === obj2[key];
+  });
+};

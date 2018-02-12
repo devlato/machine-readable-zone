@@ -1,4 +1,21 @@
 import 'jest';
+
+jest.mock('../package.json', () => [{
+  name: 'machine-readable-zone',
+  version: 'package-version',
+}, {
+  code: 'RUS',
+  name: 'Russia',
+}]);
+
+jest.mock('../data/countries.json', () => [{
+  code: 'D',
+  name: 'Germany',
+}, {
+  code: 'RUS',
+  name: 'Russia',
+}]);
+
 import { CommandLineArgs } from 'machine-readable-zone';
 import runCommandLine from './run-command-line';
 
@@ -13,19 +30,37 @@ interface MockFN {
   mock: MockFNState;
 }
 
-jest.mock('../data/countries.json', () => [{
-  code: 'D',
-  name: 'Germany',
-}, {
-  code: 'RUS',
-  name: 'Russia',
-}]);
-
 const consoleLog = console.log;
 
 describe('src/run-command-line', () => {
   beforeEach(() => {
     console.log = consoleLog;
+  });
+
+  it('Should show help if no command line args', () => {
+    expect.assertions(2);
+
+    console.log = jest.fn();
+
+    const args: CommandLineArgs = [];
+    runCommandLine(args);
+    expect(console.log).toHaveBeenCalledTimes(1);
+    expect(console.log).toHaveBeenCalledWith(`
+  Syntax: ${packageJSON.name} [options]
+  Options:
+  --first-name:          [*] First name
+  --last-name:           [*] Last name
+  --passport-number:     [*] Passport number (9 digits)
+  --country-code:        [*] Country code (ISO 3166-1 alpha-3*)
+  --nationality:         [*] Nationality (ISO 3166-1 alpha-3*)
+  --gender:              [*] Sex/gender (M/F)
+  --valid-until-date:    [*] Date of validity (dd.mm.yyyy)
+  --personal-number:         Personal number (14 digits)
+  
+  --countries            Print all the supported countries with codes
+  --version              Print package version
+  --help                 Print this help message`,
+    );
   });
 
   it('Should work with correct data', () => {
@@ -74,7 +109,7 @@ describe('src/run-command-line', () => {
     expect(mockFn.mock.calls).toEqual([[`
   Field "passportNumber" has wrong format: value 123 should have exactly 9 digits`,
     ], [`
-  Syntax: machine-readable-zone [options]
+  Syntax: ${packageJSON.name} [options]
   Options:
   --first-name:          [*] First name
   --last-name:           [*] Last name
@@ -100,7 +135,7 @@ describe('src/run-command-line', () => {
     runCommandLine(args);
     expect(console.log).toHaveBeenCalledTimes(1);
     expect(console.log).toHaveBeenCalledWith(`
-  Syntax: machine-readable-zone [options]
+  Syntax: ${packageJSON.name} [options]
   Options:
   --first-name:          [*] First name
   --last-name:           [*] Last name

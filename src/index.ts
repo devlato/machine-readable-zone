@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { CommandLineArgs } from 'machine-readable-zone';
 import { default as generateMRZFromCommandLineArgs } from './run-command-line';
 

@@ -4,6 +4,7 @@ import { default as generateMRZ } from './generate-mrz';
 import {
   extractSupportedCommandLineArgs,
   validateGenerationData,
+  areObjectsEqualDeeply,
   SchemaValidationResult,
   Country,
   NEW_LINE,
@@ -41,6 +42,12 @@ const getMRZGeneratorArgsFromCommandLineArgs =
     user: args.user,
   });
 
+export const areArgsDefault = (args: MRZGeneratorArgs) => {
+  const defaultArgs = getMRZGeneratorArgsFromCommandLineArgs(extractSupportedCommandLineArgs({}));
+
+  return areObjectsEqualDeeply(args, defaultArgs);
+};
+
 const getCommandTypeFromCommandLineArgs = (args: MRZCommandLineArgs): CommandType => {
   if (args.help) {
     return {
@@ -64,6 +71,12 @@ const getCommandTypeFromCommandLineArgs = (args: MRZCommandLineArgs): CommandTyp
   }
 
   const generatorArgs = getMRZGeneratorArgsFromCommandLineArgs(args);
+  if (areArgsDefault(generatorArgs)) {
+    return {
+      commandType: ConsoleCommandType.SHOW_HELP,
+      params: {},
+    };
+  }
   const { isValid, errors } = validateGenerationData(generatorArgs);
   if (!isValid) {
     return {

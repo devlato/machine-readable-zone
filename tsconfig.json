@@ -14,6 +14,7 @@
     "strict": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
+    "moduleResolution": "node",
     "baseUrl": "./node_modules",
     "noImplicitAny": true,
     "noImplicitThis": true,

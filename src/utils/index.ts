@@ -1,6 +1,7 @@
 export {
   extractSupportedCommandLineArgs,
   validateGenerationData,
+  areObjectsEqualDeeply,
   NEW_LINE,
   SCHEMA,
 } from './etc';

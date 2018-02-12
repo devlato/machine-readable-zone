@@ -81,6 +81,69 @@ The library exports some methods:
   If you want to use it, you need to pass a validation schema;
 * `ParamsValidationSchema` – the schema that `generateMRZFromCommandLineArgs` uses internally. 
   It's a default one and you can pass it to `validateData`.
+  
+### Basic programmatic example
+
+You could use `generateMRZ` function to generate a machine-readable zone code. 
+Please note that this function takes args that have to be already validated.
+
+```typescript
+import { generateMRZ } from 'machine-readable-zone';
+
+const code = generateMRZ({
+  user: {
+    firstName: 'Ivan',
+    lastName: 'Petrov',
+    passportNumber: '123456789',
+    countryCode: 'RUS',
+    nationality: 'RUS',
+    birthday: '01.02.1983',
+    gender: 'M',
+    validUntilDay: '02.03.2028',
+    personalNumber: '12345678901234',
+  },
+});
+
+// Prints P<RUSPETROV<<IVAN<<<<<<<<<<<<<<<<<<<<<<<<<<<\n1234567897RUS8302010M28030211234567890123454
+console.log(code);
+```
+
+### Using validation shipped with library
+
+A basic validation function is included in library as well. If you're feeling lazy ot just satisfied with
+library validation results, feel free to use it.
+
+```typescript
+import { validateData } from 'machine-readable-zone';
+
+const validationResult = validateData({
+  user: {
+    firstName: '',
+    lastName: '',
+    passportNumber: '123456789',
+    countryCode: 'RUS',
+    nationality: 'RU',
+    birthday: '01/02/1983',
+    gender: 'M',
+    validUntilDay: '02.03.2028',
+    personalNumber: '12345678901234',
+  },
+});
+
+/* 
+ * Prints: 
+ * { 
+ *   isValid: false,
+ *   errors: [
+ *     { fieldName: 'firstName', error: 'value should non be empty' },
+ *     { fieldName: 'lastName', error: 'value should non be empty' },
+ *     { fieldName: 'nationality', error: 'country RU not found. Did you mean RUS?' },
+ *     { fieldName: 'birthday', error: 'value 01/02/1983 should be an existing date in dd.mm.yyyy format' },
+ *   ],
+ * }
+ */
+console.log(validationResult);
+```
 
 ### Public interface
 
