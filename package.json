@@ -1,6 +1,6 @@
 {
   "name": "machine-readable-zone",
-  "version": "0.2.12",
+  "version": "0.2.14",
   "description": "Machine Readable Zone",
   "main": "dist/index.js",
   "bin": "dist/index.js",
